@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>groupId</groupId>
+    <artifactId>3dgame</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jme3_g>org.jmonkeyengine</jme3_g>
+        <jme3_v>3.1.0-stable</jme3_v>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.19</slf4j.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>bintray</id>
+            <url>https://bintray.com/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--
+        jme3-core - 任何jME3项目都需要的核心库
+jme3-effects - 各种滤镜、粒子、水面等特效。
+jme3-networking - jME3的网络模块(别名SpiderMonkey)。
+jme3-plugins - 加载orge、fbx等模型文件的插件。
+jme3-jogg - 加载jogg格式的音频文件。
+jme3-terrain - 地形生成API，可使用高度图来生成3D地形。
+jme3-blender - 加载blender模型文件，仅适用于桌面开发，手机显卡不支持。
+jme3-jbullet - 基于jbullet的物理引擎（仅适用于桌面开发，手机用不了，而且JCenter上没有这个组件）。jme3-jbullet和jme3-bullet只能二选一，不能同时存在于同一个项目中。
+jme3-bullet - 基于BulletPhysics的物理引擎，需要jme3-bullet-native或jme3-bullet-native-android。
+jme3-bullet-native - BulletPhysics所需的静态库文件（dll、so），仅适用于桌面开发。注意：jbullet跟BulletPhysics是两码事，它不需要这些本地库文件。
+jme3-bullet-native-android - BulletPhysics所需的静态库文件（dll、so），仅适用于Android开发。
+jme3-niftygui - 为jME3添加NiftyGUI支持，可以使用NiftyGUI来制作图形用户界面 (JCenter上没有这个组件)。
+jme3-desktop - jME3桌面应用开发所需的核心API。
+jme3-lwjgl - jME3的桌面应用渲染模块，依赖LWJGL。
+jme3-lwjgl3 - jME3.1新增的模块! 使用LWJGL3为桌面进行渲染。
+jme3-jogl - jME3的桌面应用渲染模块，依赖JOGL。它是LWJGL和LWJGL3的替代品，可选。有LWJGL你就不需要JOGL，用JOGL就不需要LWJGL。
+jme3-android - jME3的Android应用核心模块。
+jme3-android-native - jME3开发Android应用所需的本地库文件。
+jme3-ios - jME3开发iOs应用的核心API (JCenter上没有这个组件)
+        -->
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-core</artifactId>
+            <version>${jme3_v}</version>
+        </dependency>
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-desktop</artifactId>
+            <version>${jme3_v}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-lwjgl</artifactId>
+            <version>${jme3_v}</version>
+        </dependency>
+        <!--物理引擎-->
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-bullet</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-android</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-android-native</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-jogg</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-effects</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-plugins</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-terrain</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-ios</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-bullet-native</artifactId>
+            <version>3.1.0-stable</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- Log -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!--lemur框架-->
+        <dependency>
+            <groupId>com.simsilica</groupId>
+            <artifactId>lemur</artifactId>
+            <version>1.10.1</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>com.simsilica</groupId>
+            <artifactId>lemur-proto</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
